@@ -6,7 +6,7 @@ using namespace std;
 /*
 	it can be seen that I can divide CC into two groups
 	if CC % 2 == 0 "Even" so, I need to add the probabilities of 
-	giving an Even number of Coins to Men, which will be equal to probility of 
+	giving an Even number of candies to Men, which will be equal to probility of 
 	giving 0 candies to men + giving 2 cadies to men...
 	The probability of giving i candies to men = 
 	(M/total)^i * (W/total)^(C-i) * nCr(n=C, r=i)
