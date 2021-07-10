@@ -3,34 +3,47 @@
 typedef long long ll;
 using namespace std;
 
+/*
+	https://en.wikipedia.org/wiki/Conditional_probability
+	https://en.wikipedia.org/wiki/Bayes%27_theorem
+*/
+
 const int N = 30;
-bool vis[N];
 double p[N];
 int n, r;
 double ans;
-void fun(double curr,int ct, bool target, int idx, double sum) {
-	if (idx == r) {
-		if (target) 
-			ans += curr;
-		return;
-	}
+
+double pro(int msk) {
+	double ret = 1;
 	for (int i = 0; i < n; i++) {
-		if (!vis[i]) {
-			vis[i] = true;
-			fun(curr * (p[i]/sum), ct, target|(i == ct), idx+1, sum - p[i]);
-			vis[i] = false;
+		if (1 & (msk >> i)) {
+			ret *= p[i];
+		}
+		else {
+			ret *= 1-p[i];
 		}
 	}
+	return ret;
 }
 
 void solve() {
 	double sum = 0;
+
 	for (int i = 0; i < n; i++)
 		cin >> p[i], sum += p[i];
+
 	for (int i = 0; i < n; i++) {
-		ans = 0;
-		fun(1, i, 0, 0, sum);
-		cout << fixed << setprecision(6) << ans << endl;
+		double a = 0, b = 0;
+		for (int msk = 0; msk < (1<<n); msk++) {
+			if (__builtin_popcount(msk) == r) {
+				double tmp = pro(msk);
+
+				b += tmp;
+				if (1 & (msk >> i))
+					a += tmp;
+			}
+		}
+		cout << fixed << setprecision(6) << a/b << endl;
 	}
 }
 
