@@ -7,3 +7,5 @@ solve2.cpp
 *build
 
 gitUpdate.py
+GenerateFiles.py
+DeleteGeneratedFiles.py
