@@ -3,14 +3,11 @@
 using namespace std;
 typedef long long ll;
 
+
 void solve() {
-	int N;
+	ll N;
 	cin >> N;
-	int ans;
-	if (N <= 125) ans = 4;
-	else if (N <= 211) ans = 6;
-	else if (N <= 214) ans = 8;
-	cout << ans << endl;
+	cout << max(6LL, N+1) / 2 * 5;
 }
 
 int main() {
@@ -21,5 +18,10 @@ int main() {
 	
 	ios_base::sync_with_stdio(false);
 	cin.tie(0);
-	solve();
+	int t;
+	cin >> t;
+	while(t--) {
+		solve();
+		cout << '\n';
+	}
 }

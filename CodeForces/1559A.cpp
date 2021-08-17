@@ -4,16 +4,16 @@ using namespace std;
 typedef long long ll;
 
 void solve() {
-	int ans = 0, S, T;
-	cin >> S >> T;
-	for (int i = 0; i <= 100; i++) {
-		for (int j = 0; j <= 100; j++) {
-			for (int k = 0; k <= 100; k++) {
-				ans += (i * j * k <= T && i + j + k <= S) ;
-			}
-		}
+	int N;
+	cin >> N;
+	int ans;
+	cin >> ans;
+	for (int i = 1; i < N; i++) {
+		int tmp;
+		cin >> tmp;
+		ans &= tmp;
 	}
-	cout << ans << endl;
+	cout << ans;
 }
 
 int main() {
@@ -24,5 +24,10 @@ int main() {
 	
 	ios_base::sync_with_stdio(false);
 	cin.tie(0);
-	solve();
+	int t;
+	cin >> t;
+	while(t--) {
+		solve();
+		cout << '\n';
+	}
 }
