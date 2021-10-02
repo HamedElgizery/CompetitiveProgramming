@@ -4,7 +4,14 @@ using namespace std;
 typedef long long ll;
 
 void solve() {
-
+	int n;
+	string s;
+	cin >> n >> s;
+	for (int i = 0; i < n; i++) {
+		if (s[i] == 'D') s[i] = 'U';
+		else if (s[i] == 'U') s[i] = 'D';
+	}
+	cout << s ;
 }
 
 int main() {
@@ -21,5 +28,4 @@ int main() {
 		solve();
 		cout << '\n';
 	}
-	return 0;
 }
