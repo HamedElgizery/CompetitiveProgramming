@@ -2,10 +2,27 @@
 *output.txt
 solve.cpp
 solve2.cpp
-
+*.swp
+*.swl
+*.swm
+*.swn
+*.swo
+*.swa
+*.swb
+*.swc
+*.swd
+*.swe
+*.swf
+*.swg
+*.swh
+*.swi
+*.swj
+*.swk
+*.svz
 
 *build
 
 gitUpdate.py
 GenerateFiles.py
 DeleteGeneratedFiles.py
+inno
