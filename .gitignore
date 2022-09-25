@@ -19,6 +19,7 @@ solve2.cpp
 *.swj
 *.swk
 *.svz
+*.exe
 
 *build
 
